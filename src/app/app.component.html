@@ -1,0 +1,124 @@
+<div class="wrapper" (window:resize)="onResize()" [ngClass]="{'blue-theme': blueTheme, 'green-theme': greenTheme}">
+  <nav class="navbar" [class.full]="hide" [class.short]="active">
+    <div class="bars" (click)="sidebarToggle()">
+      <div class="lines">
+        <span></span>
+        <span class="middle"></span>
+        <span class="bottom"></span>
+      </div>
+    </div>
+    <div class="links">
+      <ul>
+        <li>
+          <a href="javascript:void(0)">Rollings</a>
+        </li>
+      </ul>
+    </div>
+    <div *ngIf="cart" class="cart">
+      <fa-layers class="fa-fw">
+        <fa-icon [icon]="['fas', 'shopping-cart']"></fa-icon>
+        <fa-layers-text content="0" transform="up-4 right-3" class="cart-value"></fa-layers-text>
+      </fa-layers>
+    </div>
+  </nav>
+  <nav class="sidebar" [class.active]="active" [class.hide]="hide">
+    <div class="user">
+      <div class="avatar">
+        <img src="../assets/img/avatar.jpg"/>
+        <p>J. McGill</p>
+      </div>
+    </div>
+    <div class="menu-content">
+      <ul class="items" *ngIf="!menuLoading">
+        <li>
+          <a href="javascript:void(0)" routerLink="dashboard.html">
+            <fa-icon
+              [icon]="'chalkboard'">
+            </fa-icon>
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:void(0)">
+            <fa-icon
+              [icon]="'cogs'">
+            </fa-icon>
+            <span>Widgets</span>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:void(0)" (click)="selectMenuItem(menuItems.Tables)">
+            <fa-icon
+              [icon]="'table'">
+            </fa-icon>
+            <span>Tables</span>
+          </a>
+          <ul class="collapse" [@openSubmenu]="isSelected(menuItems.Tables)">
+            <li>
+              <a href="javascript:void(0)" routerLink="responsive-table.html" routerLinkActive="active">Responsive</a>
+            </li>
+            <li>
+              <a href="javascript:void(0)" routerLink="nesting-table.html"
+                 routerLinkActive="active">Nesting</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="javascript:void(0)" routerLink="charts.html">
+            <fa-icon
+              [icon]="'chart-pie'">
+            </fa-icon>
+            <span>Charts</span>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:void(0)" routerLink="shop">
+            <fa-icon
+              [icon]="'shopping-cart'">
+            </fa-icon>
+            <span>Shop</span>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:void(0)" routerLink="board.html">
+            <fa-icon
+              [icon]="'shopping-cart'">
+            </fa-icon>
+            <span>Board</span>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:void(0)" routerLink="all-icons.html">
+            <fa-icon
+              [icon]="'shopping-cart'">
+            </fa-icon>
+            <span>Icons</span>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:void(0)" routerLink="alerts.html">
+            <fa-icon
+              [icon]="'exclamation-circle'">
+            </fa-icon>
+            <span>Alerts</span>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:void(0)" routerLink="accordions.html">
+            <fa-icon
+              [icon]="'exclamation-circle'">
+            </fa-icon>
+            <span>Accordions</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="theme-settings">
+      <div class="theme blue" (click)="activeBlueTheme()"></div>
+      <div class="theme green" (click)="activeGreenTheme()"></div>
+    </div>
+  </nav>
+  <article [class.active]="active" [class.hide]="hide">
+    <router-outlet></router-outlet>
+  </article>
+</div>

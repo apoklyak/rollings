@@ -1,0 +1,9 @@
+<div class="main-picture">
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <img *ngFor="let image of item" [attr.src]="image" class="swiper-slide" />
+    </div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+</div>

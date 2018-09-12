@@ -1,0 +1,8 @@
+<div class="alert" [ngClass]="[alertType, alertStyle]">
+  <p class="message" *ngIf="message">{{message}}</p>
+  <div class="close">
+    <fa-icon
+      [icon]="'times'">
+    </fa-icon>
+  </div>
+</div>

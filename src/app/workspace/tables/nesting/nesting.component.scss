@@ -1,0 +1,148 @@
+@import "../../../../../node_modules/bootstrap/scss/bootstrap-grid";
+@import "../../../../styles/variables";
+
+table {
+  font-size: 1.5rem;
+  width: 100%;
+
+  th {
+    position: relative;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-align: left;
+    user-select: none;
+    color: $nesting-table-column-title;
+    white-space: nowrap;
+  }
+
+  tbody tr {
+    &:nth-of-type(odd) {
+      background-color: $nesting-table-odd-row;
+    }
+  }
+
+  td, th {
+    padding: 1.5rem 1rem;
+  }
+
+  //.fa-sort-asc, .fa-sort-desc {
+  //  display: none;
+  //
+  //  &.active {
+  //    display: inline;
+  //    position: absolute;
+  //    top: 50%;
+  //    transform: translate(0, -50%);
+  //    color: #191919;
+  //    margin: 0 5px;
+  //  }
+  //}
+}
+
+.table-wrapper {
+  background-color: $nesting-table-wrapper-bg;
+  padding: 1rem;
+  font-family: "Tinos", sans-serif; //TODO: переместить шрифт таблицы в tables.style.scss
+
+  > ul {
+    > li {
+      &:nth-child(even) > .collapsible-header {
+        background-color: $nesting-table-even-row;
+      }
+    }
+  }
+
+  .right, .down {
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    color: $nesting-table-arrows;
+  }
+
+  .collapsible-header {
+    font-size: 1.7rem;
+    display: flex;
+    cursor: pointer;
+    padding: 1rem;
+
+    span {
+      padding: 0 0 0 1rem;
+    }
+  }
+
+  .collapsible-body {
+    display: none;
+    padding: 0 0 0 1rem;
+
+    @include media-breakpoint-up(md) {
+      padding: 0 0 0 2rem;
+    }
+
+    &.active {
+      display: block;
+    }
+
+    > ul {
+      > li {
+        &:nth-child(even) > .collapsible-header {
+          background-color: $nesting-table-even-in-expand-row;
+        }
+      }
+    }
+  }
+
+
+}
+
+.responsive-table {
+
+  .checkbox {
+    display: none;
+  }
+
+  thead {
+    display: none;
+
+    @include media-breakpoint-up(md) {
+      display: table-header-group;
+    }
+  }
+
+  tbody {
+    display: block;
+
+    @include media-breakpoint-up(md) {
+      display: table-row-group;
+    }
+  }
+
+  tr {
+    display: block;
+
+    @include media-breakpoint-up(md) {
+      display: table-row;
+    }
+  }
+
+  td {
+    @include media-breakpoint-down(sm) {
+      padding-left: 50%;
+      display: flex;
+      position: relative;
+      width: 100%;
+
+      &:before {
+        content: attr(data-title);
+        position: absolute;
+        top: 50%;
+        left: 0;
+        padding: 0 0 0 1rem;
+        transform: translateY(-50%);
+        width: 50%;
+        white-space: nowrap;
+      }
+    }
+  }
+}
+
+

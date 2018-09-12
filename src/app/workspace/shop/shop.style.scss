@@ -1,0 +1,11 @@
+@import "../../../../node_modules/bootstrap/scss/bootstrap-grid";
+
+.products {
+  padding: 0 15px;
+  font-family: 'Fira Sans', sans-serif;
+  .no-padding {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+

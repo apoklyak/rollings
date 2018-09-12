@@ -1,0 +1,43 @@
+@import "../../../styles/variables";
+
+.widget {
+  padding: 1rem;
+  background-color: $widget-bg;
+  margin: 0 0 1.5rem;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .15), 0 1px 2px -1px rgba(0, 0, 0, .15);
+
+  header {
+    margin: 0 0 2rem;
+    color: #3a3a3a;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem;
+
+    .title {
+      margin: 0 0 1rem;
+      font-size: 2rem;
+      font-weight: 600;
+    }
+
+    .desc {
+      font-size: 1.5rem;
+    }
+
+    .btns {
+      display: flex;
+
+      .icon {
+        cursor: pointer;
+        padding: .5rem;
+        color: $widget-icon;
+        display: flex;
+        font-size: 1.4rem;
+        transition: color .3s;
+
+        &:hover {
+          color: lighten($widget-icon, 5%);
+        }
+      }
+    }
+  }
+}

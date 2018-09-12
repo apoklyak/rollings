@@ -1,0 +1,50 @@
+.checkbox {
+  position: relative;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  margin: 0 auto;
+
+  input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+
+    &:checked ~ .tick {
+      background-color: $checkbox-active-bg;
+
+      &:after {
+        left: 7px;
+        top: 3px;
+        width: 6px;
+        height: 11px;
+        border-top: 2px solid transparent;
+        border-left: 2px solid transparent;
+        border-right: 2px solid $checkbox-tick;
+        border-bottom: 2px solid $checkbox-tick;
+        transform: rotate(45deg);
+        content: '';
+        position: absolute;
+      }
+    }
+
+    &:disabled ~ .tick {
+      background: $checkbox-disabled-bg;
+      pointer-events: none;
+
+      &:after {
+        border-right: 2px solid $checkbox-disabled-tick;
+        border-bottom: 2px solid $checkbox-disabled-tick;
+      }
+    }
+  }
+
+  .tick {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: $checkbox-bg;
+    cursor: pointer;
+  }
+}

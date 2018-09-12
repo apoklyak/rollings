@@ -1,0 +1,26 @@
+<div class="widget">
+  <header>
+    <div class="widget-desc">
+      <p class="title" *ngIf="title">{{title}}</p>
+      <p class="desc" *ngIf="description">{{description}}</p>
+    </div>
+    <div class="btns">
+      <div class="icon">
+        <fa-icon
+          [icon]="'cog'">
+        </fa-icon>
+      </div>
+      <div class="icon">
+        <fa-icon
+          [icon]="'angle-down'">
+        </fa-icon>
+      </div>
+      <div class="icon">
+        <fa-icon
+          [icon]="'times'">
+        </fa-icon>
+      </div>
+    </div>
+  </header>
+  <ng-content></ng-content>
+</div>

@@ -1,0 +1,41 @@
+<div class="item">
+  <div [routerLink]="item.UrlName">
+    <img *ngIf="item.Image; else preloader" [src]="item.Image"/>
+    <div class="overlay"></div>
+
+    <!--Example of preloader setup-->
+    <ng-template #preloader>
+      <app-preloader style="padding: 4rem 0; display: flex"></app-preloader>
+    </ng-template>
+  </div>
+  <div class="desc">
+    <div class="title-and-price">
+      <div class="title-section">
+        <p class="desc-title">
+          {{item.Name}}
+        </p>
+        <p class="product-desc">
+          {{item.Description}}
+        </p>
+      </div>
+      <p class="price">
+        <span>$</span>
+        {{item.Price}}
+      </p>
+    </div>
+    <div class="colors">
+      <p class="desc-title">Colors</p>
+      <div class="items">
+        <span class="red"></span>
+        <span class="blue"></span>
+      </div>
+    </div>
+    <div class="sizes">
+      <p class="desc-title">Sizes</p>
+      <div class="items">
+        <span *ngFor="let size of item.Sizes">{{size}}</span>
+      </div>
+    </div>
+  </div>
+  <div class="desc-space"></div>
+</div>

@@ -1,0 +1,39 @@
+@import "../../../styles/variables";
+@import "../../../../node_modules/bootstrap/scss/bootstrap-grid";
+
+.accordion {
+  box-shadow: 0 2px 0 -2px rgba(0, 0, 0, .1), 0 2px 1px 0 rgba(0, 0, 0, .1), 0 1px 4px 0 rgba(0, 0, 0, .1);
+
+  .collapsible-header {
+
+    &:not(:last-child) {
+      border-bottom: 1px solid darken($accordions-title-active, 5%);
+    }
+
+    &:hover .title {
+      background-color: $accordions-title-active;
+    }
+
+    .title {
+      padding: 1.5rem;
+      font-size: 1.6rem;
+      cursor: pointer;
+      user-select: none;
+      transition: background-color .2s;
+
+      &.active {
+        background-color: $accordions-title-hover;
+      }
+    }
+  }
+
+  .collapsible-body {
+    overflow: hidden;
+    font-size: 1.4rem;
+
+    .desc {
+      padding: 1rem;
+      line-height: 1.3;
+    }
+  }
+}

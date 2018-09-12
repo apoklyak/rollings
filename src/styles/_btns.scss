@@ -1,0 +1,67 @@
+.btn {
+  padding: 1rem 2rem;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background-color .2s;
+  font-weight: 500;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+  &.primary {
+    background-color: $primary;
+
+    &:hover {
+      background-color: darken($primary, 10%);
+    }
+  }
+
+  &.danger {
+    background-color: $danger;
+
+    &:hover {
+      background-color: darken($danger, 10%);
+    }
+  }
+
+  &.warning {
+    background-color: $warning;
+
+    &:hover {
+      background-color: darken($warning, 10%);
+    }
+  }
+
+  &.info {
+    background-color: $info;
+
+    &:hover {
+      background-color: darken($info, 10%);
+    }
+  }
+
+  &.success {
+    background-color: darken($success, 5%);
+
+    &:hover {
+      background-color: darken($success, 10%);
+    }
+  }
+
+  &.muted {
+    background-color: $muted;
+
+    &:hover {
+      background-color: darken($muted, 10%);
+    }
+  }
+
+  &.btn-md {
+    font-size: 1.7rem;
+    padding: 1.2rem 3rem;
+  }
+
+  &.btn-lg {
+    font-size: 1.9rem;
+    padding: 1.3rem 3rem;
+  }
+}

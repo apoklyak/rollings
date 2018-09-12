@@ -1,0 +1,150 @@
+.sidebar {
+  width: 250px;
+  position: fixed;
+  left: -250px;
+  top: 0;
+  bottom: 0;
+  background-color: $sidebar-bg;
+  color: #f8f8f8;
+  font-weight: 400;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: left .2s;
+  font-family: 'Tajawal', sans-serif;
+  background-image: linear-gradient(to bottom, #2f2f2f, #404040, #2b2b2b, #1f1f1f, #141414);
+
+  &.active {
+    left: 0;
+  }
+
+  &.hide {
+    left: -250px;
+  }
+
+  @media (min-width: 1200px) {
+    left: 0;
+  }
+
+  .menu-content {
+    height: 100%;
+
+    .items {
+
+      > li:first-child {
+        border-top: none;
+      }
+
+      > li {
+        font-size: 1.7rem;
+
+        > a {
+          padding: 1.2rem 2rem;
+          transition: background-color .1s;
+
+          &:hover {
+            background-color: $sidebar-tab-hover;
+          }
+
+        }
+
+        .collapse {
+          overflow: hidden;
+        }
+
+        > ul {
+          background-color: $sidebar-submenu-bg;
+
+          a {
+            font-size: 1.5rem;
+            padding: 1rem 0 1rem 3rem;
+
+            &:hover {
+              background-color: $sidebar-submenu-tab-hover;
+            }
+          }
+        }
+      }
+
+      a {
+        text-decoration: none;
+        color: $sidebar-tabs-text;
+        display: flex;
+        align-items: center;
+
+        &.active {
+          background-color: $sidebar-submenu-tab-active;
+        }
+
+        span {
+          margin: 0 2rem;
+        }
+      }
+    }
+
+  }
+
+  .brute-down {
+    font-size: 1rem;
+  }
+
+  .theme-settings {
+    height: 50px;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+
+    .theme {
+      width: 20px;
+      height: 20px;
+      border: 1px solid #eee;
+      margin: 0 .25rem;
+      cursor: pointer;
+      transition: background-color .2s;
+
+      &:hover {
+        &.blue {
+          background-color: lighten(#5ab4ce, 5%);
+        }
+
+        &.green {
+          background-color: lighten(#48ce67, 5%);
+        }
+      }
+
+      &.blue {
+        background-color: #5ab4ce;
+      }
+
+      &.green {
+        background-color: #48ce67;
+      }
+    }
+  }
+
+  .user {
+    padding: 5rem 0 4rem;
+
+    .avatar {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    p {
+      text-align: center;
+      font-size: 1.35rem;
+      font-weight: 400;
+      margin: 1rem 0;
+    }
+
+    img {
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+    }
+  }
+}
+

@@ -1,0 +1,148 @@
+@import "../../../../../node_modules/bootstrap/scss/bootstrap-grid";
+@import "../../../../styles/variables";
+
+.item {
+  position: relative;
+  margin: 0 0 2rem;
+
+  &:hover {
+
+    .desc {
+      height: 170px;
+    }
+
+    .overlay {
+      opacity: 1;
+      visibility: visible;
+      cursor: pointer;
+    }
+  }
+
+  img {
+    width: 100%;
+    display: block;
+  }
+
+  .desc {
+    padding: 0 2rem;
+    background-color: $shop-description-section-bg;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    height: 170px;
+    overflow: hidden;
+    transition: height .2s;
+
+    @include media-breakpoint-up(md) {
+      height: 70px;
+    }
+
+    .desc-title {
+      font-weight: 500;
+      margin: 0 0 .5rem;
+      color: $shop-description-title;
+    }
+
+    .title-and-price {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 70px;
+
+      .title-section {
+        display: flex;
+        flex-direction: column;
+
+        .desc-title {
+          font-size: 1.5rem;
+        }
+
+        .product-desc {
+          color: $shop-description-title;
+          font-size: 1.3rem;
+          font-weight: 400;
+        }
+      }
+
+      .price {
+        font-size: 2rem;
+        font-weight: 500;
+        display: flex;
+        color: $shop-price;
+      }
+    }
+
+    .colors {
+      .desc-title {
+        font-size: 1.3rem;
+      }
+
+      .items {
+        display: flex;
+
+        span {
+          border-radius: 50%;
+          padding: .75rem;
+          margin: 0 .2rem 0 0;
+
+          &.red {
+            background-color: #d9534f;
+          }
+
+          &.blue {
+            background-color: #0275d8;
+          }
+        }
+      }
+    }
+
+    .sizes {
+      margin: 1.6rem 0 0;
+      .desc-title {
+        font-size: 1.3rem;
+      }
+
+      .items {
+        display: flex;
+
+        span {
+          color: #333;
+          font-size: 1.25rem;
+          text-transform: uppercase;
+
+          + span {
+
+            &:before {
+              content: ',';
+              margin: 0 .2rem 0 0;
+            }
+          }
+
+
+        }
+      }
+    }
+  }
+
+  .desc-space {
+    height: 70px;
+    width: 100%;
+  }
+
+  .overlay {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    opacity: 1;
+    visibility: visible;
+    background-color: rgba(236, 236, 255, .2);
+    transition: opacity .2s, visibility .2s;
+
+    @include media-breakpoint-up(md) {
+      background-color: rgba(255, 255, 255, .3);
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+}

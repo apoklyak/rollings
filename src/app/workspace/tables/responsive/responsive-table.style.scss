@@ -1,0 +1,187 @@
+@import "../../../../../node_modules/bootstrap/scss/bootstrap-grid";
+// There is a way of import Bootstrap grid for the page. But there is matter to include certain files from structure Bootstrap framework
+// for example:
+//
+//@import "../../../../../node_modules/bootstrap/scss/functions";
+//@import "../../../../../node_modules/bootstrap/scss/variables";
+//@import "../../../../../node_modules/bootstrap/scss/mixins/breakpoints";
+//@import "../../../../../node_modules/bootstrap/scss/mixins/grid-framework";
+//@import "../../../../../node_modules/bootstrap/scss/mixins/grid";
+//@import "../../../../../node_modules/bootstrap/scss/grid";
+//
+// You can comment first import row and then uncomment 6 rows next.
+// In result, you will have a working page with CSS bundle which size a little less than get in a first way
+
+@import "../../../../styles/variables";
+@import "../../../../styles/checkbox";
+
+table {
+  font-size: 1.5rem;
+  width: 100%;
+  font-family: "Tinos", sans-serif;
+
+  th {
+    position: relative;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-align: left;
+    user-select: none;
+    color: $responsive-table-column-title;
+    white-space: nowrap;
+
+    &.checkbox-cell {
+      cursor: default;
+    }
+  }
+
+  tbody tr {
+    &:nth-child(odd) {
+      background-color: $responsive-table-odd-row;
+    }
+  }
+
+  td, th {
+    padding: 1.5rem 1rem;
+  }
+
+  //.fa-sort-asc, .fa-sort-desc {
+  //  display: none;
+  //
+  //  &.active {
+  //    display: inline;
+  //    position: absolute;
+  //    top: 50%;
+  //    transform: translate(0, -50%);
+  //    color: #191919;
+  //    margin: 0 5px;
+  //  }
+  //}
+}
+
+.table-wrapper {
+  background-color: $responsive-table-wrapper-bg;
+  padding: 1rem;
+}
+
+.scrollable-table {
+  overflow-x: auto;
+
+  table {
+    min-width: 800px;
+    border: 1px solid darken($responsive-table-wrapper-bg, 2%);
+  }
+}
+
+.responsive-table {
+
+  .checkbox {
+    display: none;
+  }
+
+  thead {
+    display: none;
+
+    @include media-breakpoint-up(md) {
+      display: table-header-group;
+    }
+  }
+
+  tbody {
+    display: block;
+
+    @include media-breakpoint-up(md) {
+      display: table-row-group;
+    }
+  }
+
+  tr {
+    display: block;
+
+    @include media-breakpoint-up(md) {
+      display: table-row;
+    }
+  }
+
+  td {
+    @include media-breakpoint-down(sm) {
+      padding-left: 50%;
+      display: flex;
+      position: relative;
+      width: 100%;
+
+      &:before {
+        content: attr(data-title);
+        position: absolute;
+        top: 50%;
+        left: 0;
+        padding: 0 0 0 1rem;
+        transform: translateY(-50%);
+        width: 50%;
+        white-space: nowrap;
+      }
+    }
+  }
+}
+
+.fixed-rows-table {
+  display: flex;
+  position: relative;
+
+  .coin-name {
+    display: flex;
+  }
+
+  .coin-data {
+    overflow-x: auto;
+    width: 100%;
+  }
+}
+
+.checkbox-cell {
+  width: 50px;
+}
+
+.progress-bar {
+  overflow: hidden;
+  height: 10px;
+  background-color: $responsive-table-progress-bar-bg;
+  border-radius: 5px;
+  width: 85%;
+  max-width: 130px;
+
+  span {
+    min-width: 0;
+    height: 100%;
+    display: block;
+    transition: width .5s;
+
+    &.primary {
+      background-color: $primary;
+    }
+
+    &.danger {
+      background-color: $danger;
+    }
+
+    &.warning {
+      background-color: $warning;
+    }
+
+    &.info {
+      background-color: $info;
+    }
+
+    &.success {
+      background-color: $success;
+    }
+
+    &.muted {
+      background-color: $muted;
+    }
+  }
+}
+
+
+
+
+

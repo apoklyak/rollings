@@ -1,0 +1,82 @@
+// Font Awesome variables
+
+// $fa-font-path : '../node_modules/@fortawesome/fontawesome/styles.css';
+
+
+/* General colors */
+
+$primary: #5986ad;
+$danger: #e86965;
+$warning: #eab365;
+$info: #5bc0de;
+$success: #75d69b;
+$muted: #78838a;
+
+/* Checkboxes */
+
+$checkbox-bg: #eee;
+$checkbox-active-bg: #5ab4ce;
+$checkbox-tick: #fff;
+$checkbox-disabled-bg: #ececec;
+$checkbox-disabled-tick: #ccc;
+
+/* Sidebar */
+
+$sidebar-bg: #232323;
+$sidebar-tabs-text: #fff;
+$sidebar-tab-hover: #2b2b2b;
+$sidebar-submenu-bg: #2b2b2b;
+$sidebar-submenu-tab-hover: #5ab4ce;
+$sidebar-submenu-tab-active: $sidebar-submenu-tab-hover;
+
+
+/* The Shop page */
+
+$shop-price: #ffaf0e;
+$shop-description-section-bg: #fff;
+$shop-description-title: #333;
+$shop-details-thumbnail-borders: #555;
+$shop-details-arrow-bg: #eee;
+$shop-details-arrow: #000;
+
+
+/* Accordions component */
+
+$accordions-title-hover: #fbfbfb;
+$accordions-title-active: $accordions-title-hover;
+
+
+/* Alerts component */
+
+$alerts-fill-text: #fff;
+$alerts-fill-close: $alerts-fill-text;
+
+
+/* Widget component */
+
+$widget-icon: #6b6b6b;
+$widget-bg: #fff;
+
+
+/* Responsive table page */
+
+$responsive-table-column-title: #333;
+$responsive-table-odd-row: #f9f9f9;
+$responsive-table-wrapper-bg: #fff;
+$responsive-table-progress-bar-bg: #eee;
+
+
+/* Nesting table page */
+
+$nesting-table-column-title: $responsive-table-column-title;
+$nesting-table-odd-row: $responsive-table-odd-row;
+$nesting-table-wrapper-bg: $responsive-table-wrapper-bg;
+$nesting-table-even-row: #e5f5ff;
+$nesting-table-even-in-expand-row: #e4f7f0;
+$nesting-table-arrows: #777;
+
+
+/* Icons page */
+
+$icons-section-bg: #fff;
+$icons-icon-name: #444;

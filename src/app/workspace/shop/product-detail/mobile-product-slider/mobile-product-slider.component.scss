@@ -1,0 +1,17 @@
+@import '../../../../../../node_modules/swiper/dist/css/swiper.min.css';
+@import "../../../../../../node_modules/bootstrap/scss/functions";
+@import "../../../../../../node_modules/bootstrap/scss/variables";
+@import "../../../../../../node_modules/bootstrap/scss/mixins/breakpoints";
+
+.main-picture {
+  padding: 0 3rem;
+
+  @include media-breakpoint-up(md) {
+    padding: 0 1rem;
+  }
+
+  img {
+    width: 100%;
+  }
+
+}

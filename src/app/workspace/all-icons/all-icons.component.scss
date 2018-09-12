@@ -1,0 +1,26 @@
+@import "../../../../node_modules/bootstrap/scss/bootstrap-grid";
+@import "../../../styles/variables";
+
+.desc {
+  font-size: 1.7rem;
+}
+
+.icons {
+  margin: 3rem 0 0;
+  background-color: $icons-section-bg;
+  padding: 2rem 0;
+
+  .icon {
+    font-size: 1.8rem;
+    padding: 1rem 2rem;
+    display: flex;
+    color: $icons-icon-name;
+
+    .icon-name {
+      margin: 0 1rem;
+      font-size: 1.5rem;
+    }
+
+  }
+}
+

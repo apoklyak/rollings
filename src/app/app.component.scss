@@ -1,0 +1,28 @@
+@import "../styles/reset";
+@import "../styles/variables";
+@import "../styles/base";
+@import "../styles/fonts";
+@import "../styles/typography";
+@import "../styles/icons";
+@import "../styles/default-theme";
+@import "../styles/blue-theme";
+@import "../styles/navbar";
+@import "../styles/sidebar";
+@import "../styles/theme-settings";
+
+.cart {
+  display: flex;
+  margin: 0 0 0 auto;
+  cursor: pointer;
+
+  .fa-fw {
+    font-size: 3rem;
+    color: #d69199;
+  }
+
+  .cart-value {
+    color: white;
+    font-weight: 500;
+    font-size: 1.3rem;
+  }
+}

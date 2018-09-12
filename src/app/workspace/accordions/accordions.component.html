@@ -1,0 +1,39 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-6">
+      <app-widget
+        [title]="'Accordion without animation'"
+        [description]="'This is just *ngIf way in the Angular to display section with content'">
+        <div class="accordion">
+          <div class="collapsible-header" *ngFor="let header of accordionData">
+            <div class="title" [class.active]="header.IsOpened" (click)="openNesting(header)">{{header.Title}}</div>
+            <div class="collapsible-body" *ngIf="header.IsOpened">
+              <p class="desc">
+                {{header.Description}}
+              </p>
+            </div>
+          </div>
+        </div>
+      </app-widget>
+    </div>
+    <div class="col-lg-6">
+      <app-widget
+        [title]="'Accordion with animation'"
+        [description]="'In this case it is used Angular animation'">
+        <div class="accordion">
+          <div class="collapsible-header" *ngFor="let header of animationAccordionData">
+            <div class="title" [class.active]="header.IsOpened" (click)="openNesting(header)"> {{header.Title}}</div>
+            <div class="collapsible-body" [@openAccordion]="header.IsOpened">
+              <p class="desc">
+                {{header.Description}}
+              </p>
+            </div>
+          </div>
+        </div>
+      </app-widget>
+    </div>
+  </div>
+</div>
+
+
+

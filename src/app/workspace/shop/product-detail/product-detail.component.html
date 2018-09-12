@@ -1,0 +1,67 @@
+<div class="breadcrumbs"></div>
+<div class="product" (window:resize)="onResize()">
+  <div class="pictures">
+    <div class="thumbnails">
+      <div class="item" *ngFor="let thumbnail of images; let idx = index" [class.active]="image === thumbnail">
+        <img [attr.src]="thumbnail" (click)="changeThumbnailImage(idx)"/>
+      </div>
+    </div>
+    <app-mobile-product-slider *ngIf="isMobile"
+                               [item]="images">
+    </app-mobile-product-slider>
+    <div class="desktop-slider" *ngIf="!isMobile">
+      <div class="left" (click)="prev()">
+        <fa-icon
+          [icon]="'angle-left'">
+        </fa-icon>
+      </div>
+      <div class="right" (click)="next()">
+        <fa-icon
+          [icon]="'angle-right'">
+        </fa-icon>
+      </div>
+      <img [attr.src]="image"/>
+    </div>
+  </div>
+  <div class="description">
+    <h1>{{productName}}</h1>
+    <p class="desc">
+      {{description}}
+    </p>
+    <span class="price">{{price}}$</span>
+
+    <!-- Select dropdown is used in the template because it is better displayed on the mobile/tablet devices -->
+    <div class="size">
+      <label for="product-size">Select size:</label>
+      <select id="product-size">
+        <option *ngFor="let size of sizes">{{size}}</option>
+      </select>
+    </div>
+    <button class="btn success btn-md">Add to cart</button>
+  </div>
+</div>
+
+<div class="another-products-wp">
+  <div class="left">
+    <fa-icon
+      [icon]="'angle-left'"
+      (click)="sliderPrev()">
+    </fa-icon>
+  </div>
+  <div class="slider">
+    <ngx-siema [options]="options">
+      <ngx-siema-slide *ngFor="let item of sliderProduct">
+        <div class="item">
+          <img [src]="item.Image" [routerLink]="['/shop', item.UrlName]"/>
+        </div>
+      </ngx-siema-slide>
+    </ngx-siema>
+  </div>
+  <div class="right">
+    <fa-icon
+      [icon]="'angle-right'"
+      (click)="sliderNext()">
+    </fa-icon>
+  </div>
+</div>
+

@@ -1,0 +1,65 @@
+<div class="container-fluid">
+  <div class="table-wrapper">
+    <ul>
+      <li *ngFor="let system of systems">
+        <div class="collapsible-header first-nesting" (click)="openNesting(system)">
+          <div class="right">
+            <fa-icon
+              *ngIf="!system.IsOpened"
+              [icon]="'caret-right'">
+            </fa-icon>
+          </div>
+          <div class="down">
+            <fa-icon
+              *ngIf="system.IsOpened"
+              [icon]="'caret-down'">
+            </fa-icon>
+          </div>
+          <span>{{system.Description}}</span>
+        </div>
+        <div class="collapsible-body" [ngClass]="{active: system.IsOpened}">
+          <ul>
+
+            <li *ngFor="let group of system.Groups">
+              <div class="collapsible-header" (click)="openNesting(group)">
+                <div class="right">
+                  <fa-icon
+                    *ngIf="!group.IsOpened"
+                    [icon]="'caret-right'">
+                  </fa-icon>
+                </div>
+                <div class="down">
+                  <fa-icon
+                    *ngIf="group.IsOpened"
+                    [icon]="'caret-down'">
+                  </fa-icon>
+                </div>
+                <span>{{group.Status}}</span>
+              </div>
+              <div class="collapsible-body" [ngClass]="{active: group.IsOpened}">
+                <div class="table-striped responsive-table">
+                  <table>
+                    <thead>
+                    <tr>
+                      <th *ngFor="let key of tableHeaderCells(group)">
+                        {{key}}
+                      </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let item of group.Computers">
+                      <td *ngFor="let key of tableHeaderCells(group)" [attr.data-title]="key">
+                        {{ item[key] }}
+                      </td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
