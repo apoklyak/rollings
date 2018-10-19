@@ -7,3 +7,7 @@ Rollings includes flexible and adaptive HTML markup that works well on any devic
 * run git clone https://github.com/apoklyak/rollings.git
 * run **npm i** or **yarn install**
 * run **ng serve**
+
+### Demo ###
+
+Link: http://rollings.herokuapp.com/
