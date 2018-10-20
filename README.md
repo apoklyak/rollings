@@ -1,3 +1,5 @@
+## Rollings - free admin dashboard template on Agular 7 
+
 Rollings is flexible admin template with responsive layout. 
 The admin dashboard has elaborate solutions for Shop functional (mobile, tablet and desktop with responsive gallery of products), Tables (mobile and desktop versions of complex tables), Accordions, Charts, Icons, etc. 
 
