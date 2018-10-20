@@ -1,48 +1,5 @@
 <div class="container-fluid">
-  <div class="table-wrapper table-striped scrollable-table">
-    <table>
-      <thead>
-      <tr>
-        <th class="checkbox-cell">
-          <label class="checkbox">
-            <input type="checkbox" (click)="allCheckboxes()"/>
-            <span class="tick"></span>
-          </label>
-        </th>
-        <th *ngFor="let key of keys" (click)="tasksSort(key)">
-          {{ key }}
-          <fa-icon
-            *ngIf="this.clickedCell === key && this.sorting === 'asc'"
-            [icon]="'angle-down'">
-          </fa-icon>
-          <fa-icon
-            *ngIf="this.clickedCell === key && this.sorting === 'desc'"
-            [icon]="'angle-up'">
-          </fa-icon>
-        </th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr *ngFor="let record of records">
-        <td class="checkbox-cell">
-          <label class="checkbox">
-            <input type="checkbox" [checked]="active"/>
-            <span class="tick"></span>
-          </label>
-        </td>
-        <td *ngFor="let key of keys" [attr.data-title]="key">
-          <div class="progress-bar" *ngIf="key == 'Status'; else elseBlock">
-                    <span [style.width.%]="record[key]['Value']" [class]="record[key]['Status name']">
-                    </span>
-          </div>
-          <ng-template #elseBlock>{{ record[key] }}</ng-template>
-        </td>
-      </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="table-wrapper table-striped responsive-table" style="margin: 20px 0 0">
+  <div class="table-wrapper table-striped responsive-table">
     <table>
       <thead>
       <tr>
@@ -130,5 +87,48 @@
         </tbody>
       </table>
     </div>
+  </div>
+
+  <div class="table-wrapper table-striped scrollable-table" style="margin: 20px 0 0">
+    <table>
+      <thead>
+      <tr>
+        <th class="checkbox-cell">
+          <label class="checkbox">
+            <input type="checkbox" (click)="allCheckboxes()"/>
+            <span class="tick"></span>
+          </label>
+        </th>
+        <th *ngFor="let key of keys" (click)="tasksSort(key)">
+          {{ key }}
+          <fa-icon
+            *ngIf="this.clickedCell === key && this.sorting === 'asc'"
+            [icon]="'angle-down'">
+          </fa-icon>
+          <fa-icon
+            *ngIf="this.clickedCell === key && this.sorting === 'desc'"
+            [icon]="'angle-up'">
+          </fa-icon>
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let record of records">
+        <td class="checkbox-cell">
+          <label class="checkbox">
+            <input type="checkbox" [checked]="active"/>
+            <span class="tick"></span>
+          </label>
+        </td>
+        <td *ngFor="let key of keys" [attr.data-title]="key">
+          <div class="progress-bar" *ngIf="key == 'Status'; else elseBlock">
+                    <span [style.width.%]="record[key]['Value']" [class]="record[key]['Status name']">
+                    </span>
+          </div>
+          <ng-template #elseBlock>{{ record[key] }}</ng-template>
+        </td>
+      </tr>
+      </tbody>
+    </table>
   </div>
 </div>
