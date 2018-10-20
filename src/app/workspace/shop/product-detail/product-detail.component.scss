@@ -13,22 +13,23 @@
   }
 
   .thumbnails {
-    display: flex;
-    justify-content: center;
-    margin: 2rem 0;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0 15px 0 0;
 
     @include media-breakpoint-up(sm) {
-      flex-direction: column;
-      align-items: center;
-      min-width: 100px;
-      justify-content: flex-start;
-      margin: initial;
+      display: flex;
     }
     .item {
       cursor: pointer;
+      width: 50px;
+
       &.active img {
         border-color: $shop-details-thumbnail-borders;
       }
+
       img {
         border: solid 2px transparent;
         max-width: 50px;
@@ -44,9 +45,14 @@
     display: flex;
     flex-direction: column;
     position: relative;
+    margin: 2rem 0;
 
     @include media-breakpoint-up(md) {
       margin: 0 2rem;
+    }
+
+    h1 {
+      text-align: center;
     }
 
     .price {
@@ -86,6 +92,7 @@
 
     @include media-breakpoint-up(sm) {
       flex-direction: row;
+      padding: 0 15px;
     }
 
     @include media-breakpoint-up(md) {

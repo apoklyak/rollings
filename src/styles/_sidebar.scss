@@ -29,6 +29,7 @@
 
   .menu-content {
     height: 100%;
+    overflow: auto;
 
     .items {
 
@@ -58,7 +59,7 @@
 
           a {
             font-size: 1.5rem;
-            padding: 1rem 0 1rem 3rem;
+            padding: 1.25rem 0 1.25rem 3rem;
 
             &:hover {
               background-color: $sidebar-submenu-tab-hover;

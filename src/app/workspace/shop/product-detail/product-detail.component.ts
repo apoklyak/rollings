@@ -105,7 +105,7 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
     });
 
     this.sliderProduct = this.shopService.products;
-    this.isMobile = this.windowWidth < 900;
+    this.isMobile = this.windowWidth < 576;
   }
 
   ngOnDestroy() {
@@ -114,7 +114,7 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
 
   onResize() {
     this.windowWidth = window.innerWidth;
-    this.isMobile = this.windowWidth < 900;
+    this.isMobile = this.windowWidth < 576;
   }
 
 }
