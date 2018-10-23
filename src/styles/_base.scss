@@ -1,7 +1,7 @@
 html {
   font-size: 62.5%;
   touch-action: manipulation;
-  -webkit-overflow-scrolling: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 html, body {
@@ -37,6 +37,7 @@ article {
   background-color: #f7f7f9;
   position: relative;
   left: 0;
+  -webkit-overflow-scrolling: touch;
 
   &.active {
     //margin: 0 0 0 250px;
