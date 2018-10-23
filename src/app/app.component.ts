@@ -46,7 +46,7 @@ export class AppComponent {
   public blueTheme: boolean = false;
   public greenTheme: boolean = false;
   public collapse: boolean = false;
-  public menuLoading: boolean = false;
+  // public menuLoading: boolean = false;
   public tableArray = ['/responsive-table.html', '/tables', '/dynamic-table', '/nesting-table.html'];
   // public chartsArray = ['/google-charts', '/ng2-charts'];
 
@@ -58,24 +58,29 @@ export class AppComponent {
   constructor(private activatedRoute: Router,
               private route: ActivatedRoute,
               private shopService: ShopService) {
-    this.menuLoading = true;
-    this.activatedRoute.events.pipe(
-      filter(data => Boolean(data))
-    ).subscribe(data => {
-      if (data instanceof NavigationStart) {
-        this.menuLoading = false;
-      }
-      if (data instanceof NavigationStart && this.tableArray.indexOf(data.url) !== -1) {
-        this.selectedMenuItem = this.menuItems.Tables;
-      }
-      // if (data instanceof NavigationStart && this.chartsArray.indexOf(data.url) !== -1) {
-      //   this.selectedMenuItem = this.menuItems.Charts;
-      // }
-    });
+    // this.menuLoading = true;
+    // this.activatedRoute.events.pipe(
+    //   filter(data => Boolean(data))
+    // ).subscribe(data => {
+    //   if (data instanceof NavigationStart) {
+    //     this.menuLoading = false;
+    //   }
+    //   if (data instanceof NavigationStart && this.tableArray.indexOf(data.url) !== -1) {
+    //     this.selectedMenuItem = this.menuItems.Tables;
+    //   }
+    //   if (data instanceof NavigationStart && this.chartsArray.indexOf(data.url) !== -1) {
+    //     this.selectedMenuItem = this.menuItems.Charts;
+    //   }
+    // });
     this.shopService.onSetCart()
       .subscribe((cartState) => {
         this.cart = cartState;
       });
+    this.activatedRoute.events.subscribe(data => {
+      if (data) {
+        this.active = false;
+      }
+    });
   }
 
   sidebarToggle() {
