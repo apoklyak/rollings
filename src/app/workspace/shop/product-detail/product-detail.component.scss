@@ -4,6 +4,11 @@
 @import "../../../../styles/variables";
 @import "../../../../styles/btns";
 
+:host {
+  display: flex;
+  flex-direction: column;
+}
+
 .product {
   display: flex;
   flex-direction: column;
