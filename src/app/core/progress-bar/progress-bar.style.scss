@@ -1,0 +1,55 @@
+@import "../../../styles/variables";
+
+.progress-bar {
+  height: 15px;
+  background-color: $responsive-table-progress-bar-bg;
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 1.25rem 0;
+
+  span {
+    min-width: 0;
+    height: 100%;
+    display: block;
+    transition: width .5s;
+  }
+
+  &.primary span {
+    background-color: $primary;
+  }
+
+  &.danger span {
+    background-color: $danger;
+  }
+
+  &.warning span {
+    background-color: $warning;
+  }
+
+  &.info span {
+    background-color: $info;
+  }
+
+  &.success span {
+    background-color: $success;
+  }
+
+  &.muted span {
+    background-color: $muted;
+  }
+
+  &.animated span {
+    background-image: linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+    background-size: 10px 10px;
+    animation: progress-bar 1s linear infinite;
+  }
+
+  @keyframes progress-bar {
+    from {
+      background-position: 10px;
+    }
+    to {
+      background-position: 0;
+    }
+  }
+}

@@ -142,43 +142,8 @@ table {
 }
 
 .progress-bar {
-  overflow: hidden;
-  height: 10px;
-  background-color: $responsive-table-progress-bar-bg;
-  border-radius: 5px;
   width: 85%;
   max-width: 130px;
-
-  span {
-    min-width: 0;
-    height: 100%;
-    display: block;
-    transition: width .5s;
-
-    &.primary {
-      background-color: $primary;
-    }
-
-    &.danger {
-      background-color: $danger;
-    }
-
-    &.warning {
-      background-color: $warning;
-    }
-
-    &.info {
-      background-color: $info;
-    }
-
-    &.success {
-      background-color: $success;
-    }
-
-    &.muted {
-      background-color: $muted;
-    }
-  }
 }
 
 
