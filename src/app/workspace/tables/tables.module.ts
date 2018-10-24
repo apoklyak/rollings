@@ -5,13 +5,15 @@ import {ResponsiveTableComponent} from './responsive/responsive-table.component'
 import {NestingTableComponent} from './nesting/nesting.component';
 import {SharedModule} from '../../shared/shared.module';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
+import {ProgressBarModule} from '../../core/progress-bar/progress-bar.module';
 
 
 @NgModule({
   imports: [
     BrowserModule,
     FontAwesomeModule,
-    SharedModule
+    SharedModule,
+    ProgressBarModule
   ],
   declarations: [
     TablesComponent,

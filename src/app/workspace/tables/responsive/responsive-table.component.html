@@ -122,8 +122,11 @@
         </td>
         <td *ngFor="let key of keys" [attr.data-title]="key">
           <div class="progress-bar" *ngIf="key == 'Status'; else elseBlock">
-                    <span [style.width.%]="record[key]['Value']" [class]="record[key]['Status name']">
-                    </span>
+            <app-progress-bar
+              [scale]="record[key]['Value']"
+              [color]="record[key]['Status name']"
+              [height]="10"
+            ></app-progress-bar>
           </div>
           <ng-template #elseBlock>{{ record[key] }}</ng-template>
         </td>

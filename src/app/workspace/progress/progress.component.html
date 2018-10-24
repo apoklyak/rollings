@@ -1,0 +1,79 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-6">
+      <app-widget
+        [title]="'Basic Progress Bar'"
+        [description]="'Add any of color classes (.primary, .danger, .warning, .info, .success, .muted) to .progress-bar to apply a background color'">
+        <app-progress-bar
+          [color]="'primary'"
+          [scale]="15"
+          [height]="10">
+        </app-progress-bar>
+        <app-progress-bar
+          [color]="'danger'"
+          [scale]="30"
+          [height]="10">
+        </app-progress-bar>
+        <app-progress-bar
+          [color]="'warning'"
+          [scale]="45"
+          [height]="10">
+        </app-progress-bar>
+        <app-progress-bar
+          [color]="'info'"
+          [scale]="60"
+          [height]="10">
+        </app-progress-bar>
+        <app-progress-bar
+          [color]="'success'"
+          [scale]="75"
+          [height]="10">
+        </app-progress-bar>
+        <app-progress-bar
+          [color]="'muted'"
+          [scale]="90"
+          [height]="10">
+        </app-progress-bar>
+      </app-widget>
+    </div>
+    <div class="col-lg-6">
+      <app-widget
+        [title]="'Progress Bar with animation'"
+        [description]="'Add .animated class to .progress-bar to add animation'">
+        <app-progress-bar
+          [color]="'primary'"
+          [scale]="15"
+          [animated]="true">
+        </app-progress-bar>
+        <app-progress-bar
+          [color]="'danger'"
+          [scale]="30"
+          [animated]="true">
+        </app-progress-bar>
+        <app-progress-bar
+          [color]="'warning'"
+          [scale]="45"
+          [animated]="true">
+        </app-progress-bar>
+        <app-progress-bar
+          [color]="'info'"
+          [scale]="60"
+          [animated]="true">
+        </app-progress-bar>
+        <app-progress-bar
+          [color]="'success'"
+          [scale]="75"
+          [animated]="true">
+        </app-progress-bar>
+        <app-progress-bar
+          [color]="'muted'"
+          [scale]="90"
+          [animated]="true">
+        </app-progress-bar>
+      </app-widget>
+    </div>
+  </div>
+</div>
+
+
+

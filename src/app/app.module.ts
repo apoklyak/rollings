@@ -40,6 +40,7 @@ import {
 import {AlertsModule} from './workspace/alerts/alerts.module';
 import {ChartModule} from './workspace/chart/chart.module';
 import {AccordionsModule} from './workspace/accordions/accordions.module';
+import {ProgressModule} from './workspace/progress/progress.module';
 
 library.add(faChalkboard, faCogs, faTable,
   faChartPie, faShoppingCart, faAngleDown,
@@ -69,6 +70,7 @@ const routes: Routes = [
     BrowserAnimationsModule,
     AlertsModule,
     AccordionsModule,
+    ProgressModule,
     ChartModule,
     RouterModule.forRoot(routes)
   ],
