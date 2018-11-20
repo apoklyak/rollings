@@ -7,6 +7,11 @@ import {
   transition,
 } from '@angular/animations';
 
+export enum NotificationsTypes {
+  Top = 'top',
+  Center = 'center'
+}
+
 @Component({
   selector: 'app-notifications',
   templateUrl: './notifications.component.html',
@@ -29,25 +34,25 @@ import {
   ]
 })
 export class NotificationsComponent implements OnInit {
-
   public modal: boolean = false;
-  public centerPosition: boolean = false;
+  public notificationsTypes = NotificationsTypes;
+  public notificationStyle: string;
+
+  selectNotification(type: NotificationsTypes) {
+    this.notificationStyle = type.toString();
+  }
+
+  modalPosition() {
+    return this.notificationStyle;
+  }
+
+  openModal() {
+    this.modal = true;
+  }
 
   closeModal() {
     this.modal = false;
-  }
-
-  openModal(position) {
-    if (position == undefined) {
-      this.centerPosition = false;
-      this.modal = true;
-    }
-
-    if (arguments.length > 0) {
-      this.centerPosition = true;
-      this.modal = true;
-    }
-
+    // this.notificationStyle = '';
   }
 
   ngOnInit() {
