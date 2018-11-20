@@ -1,0 +1,34 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-6">
+      <app-widget
+        [title]="'Basic Progress Bar'"
+        [description]="'Add any of color classes (.primary, .danger, .warning, .info, .success, .muted) to .progress-bar to apply a background color'">
+
+        <button (click)="openModal()" style="width: 100px; padding: 1rem 0">Launch</button>
+
+        <button (click)="openModal(centerPosition)" style="width: 100px; padding: 1rem 0">Launch</button>
+
+
+
+        <div class="modal-wrapper" [class.center]="centerPosition" [@popupDisplay]="modal">
+          <div class="modal">
+            <div class="modal-header" >
+              <p class="title">Modal Title</p>
+            </div>
+            <div class="modal-body"></div>
+            <div class="modal-footer">
+              <button (click)="closeModal()">Close</button>
+              <button>Save</button>
+            </div>
+          </div>
+        </div>
+
+
+      </app-widget>
+    </div>
+  </div>
+</div>
+
+
+
