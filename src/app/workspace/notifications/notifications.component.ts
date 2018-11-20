@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {
   trigger,
   state,
@@ -33,7 +33,7 @@ export enum NotificationsTypes {
     ])
   ]
 })
-export class NotificationsComponent implements OnInit {
+export class NotificationsComponent {
   public modal: boolean = false;
   public notificationsTypes = NotificationsTypes;
   public notificationStyle: string;
@@ -52,11 +52,6 @@ export class NotificationsComponent implements OnInit {
 
   closeModal() {
     this.modal = false;
-    // this.notificationStyle = '';
   }
-
-  ngOnInit() {
-  }
-
 
 }
