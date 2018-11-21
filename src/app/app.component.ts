@@ -1,5 +1,5 @@
-import {Component} from '@angular/core';
-import {ActivatedRoute, NavigationStart, Router} from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute, NavigationEnd, NavigationStart, Router} from '@angular/router';
 import {
   trigger,
   state,
@@ -37,7 +37,7 @@ export enum MenuItems {
   ]
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit {
   public windowWidth: number;
   public clicked: boolean = false;
   public active: boolean = false;
@@ -54,6 +54,7 @@ export class AppComponent {
   public selectedMenuItem;
 
   public cart: boolean;
+
 
   constructor(private activatedRoute: Router,
               private route: ActivatedRoute,
@@ -81,6 +82,7 @@ export class AppComponent {
         this.active = false;
       }
     });
+
   }
 
   sidebarToggle() {
@@ -124,5 +126,13 @@ export class AppComponent {
   activeGreenTheme() {
     this.blueTheme = false;
     this.greenTheme = true;
+  }
+
+  ngOnInit() {
+    this.activatedRoute.events.pipe(
+      filter(x => x instanceof NavigationEnd)
+    ).subscribe(() => {
+      document.querySelector('#scroll').scrollTo(0, 0);
+    });
   }
 }

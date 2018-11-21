@@ -18,16 +18,45 @@
     align-items: center;
   }
 
+  &.top {
+    align-items: flex-start;
+  }
+
 
   .modal {
-    width: 500px;
-    height: 300px;
+    max-width: 500px;
     flex-direction: column;
-    background-color: red;
+    background-color: #fff;
+    border-radius: 3px;
+    padding: 3rem;
+    display: flex;
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #ddd;
+      padding: 0 0 1rem;
+
+      .icon {
+        font-size: 2rem;
+      }
+
+      .title {
+        font-size: 1.5rem;
+      }
+    }
 
     .modal-body {
       flex-grow: 1;
+      font-size: 1.5rem;
+      padding: 1rem 0;
     }
+
+    .modal-footer {
+      display: flex;
+      justify-content: flex-end;
+    }
+
   }
 }
 
