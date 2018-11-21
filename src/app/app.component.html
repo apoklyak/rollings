@@ -1,4 +1,4 @@
-<div class="wrapper" (window:resize)="onResize()" [ngClass]="{'blue-theme': blueTheme, 'green-theme': greenTheme}">
+<div  class="wrapper" (window:resize)="onResize()" [ngClass]="{'blue-theme': blueTheme, 'green-theme': greenTheme}">
   <nav class="navbar" [class.full]="hide" [class.short]="active">
     <div class="bars" (click)="sidebarToggle()">
       <div class="lines">
@@ -135,7 +135,7 @@
       <div class="theme green" (click)="activeGreenTheme()"></div>
     </div>
   </nav>
-  <article [class.active]="active" [class.hide]="hide">
+  <article id="scroll" [class.active]="active" [class.hide]="hide">
     <router-outlet></router-outlet>
   </article>
 </div>
