@@ -42,6 +42,7 @@ import {ChartModule} from './workspace/chart/chart.module';
 import {AccordionsModule} from './workspace/accordions/accordions.module';
 import {ProgressModule} from './workspace/progress/progress.module';
 import {NotificationsModule} from './workspace/notifications/notifications.module';
+import {NotificationsService} from './workspace/notifications/notifications.service';
 
 library.add(faChalkboard, faCogs, faTable,
   faChartPie, faShoppingCart, faAngleDown,
@@ -76,7 +77,7 @@ const routes: Routes = [
     ChartModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [NotificationsService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

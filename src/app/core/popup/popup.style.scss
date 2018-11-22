@@ -1,0 +1,90 @@
+@import "../../../styles/variables";
+
+.modal-wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  z-index: 3;
+  background-color: rgba(55, 55, 55, 0.5);
+  display: flex;
+  padding: 3rem 0;
+
+  &.center {
+    align-items: center;
+  }
+
+  &.top {
+    align-items: flex-start;
+  }
+
+  .modal {
+    max-width: 500px;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 3px;
+    padding: 3rem;
+    display: flex;
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #ddd;
+      padding: 0 0 1rem;
+      align-items: center;
+
+      .icon {
+        position: relative;
+        height: 30px;
+        width: 30px;
+        cursor: pointer;
+        .close-icon {
+          display: flex;
+          width: 100%;
+          height: 100%;
+          align-items: center;
+          justify-content: center;
+          &:before, &:after {
+            content: '';
+            height: 10px;
+            width: 1px;
+            background-color: #333;
+            position: absolute;
+          }
+
+          &:before {
+            transform: rotate(45deg);
+          }
+
+          &:after {
+            transform: rotate(-45deg);
+          }
+        }
+      }
+
+      .title {
+        font-size: 1.6rem;
+        color: #333;
+        font-weight: 500;
+      }
+    }
+
+    .modal-body {
+      flex-grow: 1;
+      padding: 1rem 0;
+      line-height: 1.3;
+      font-size: 1.4rem;
+    }
+
+    .modal-footer {
+      display: flex;
+      justify-content: flex-end;
+      padding: 2rem 0 0;
+    }
+
+  }
+}
