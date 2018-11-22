@@ -1,0 +1,16 @@
+<div class="modal-wrapper" [ngClass]="popupPosition" [@popup]="popupShow()">
+  <div class="modal">
+    <header>
+      <p class="title">Modal Title</p>
+      <div class="icon" (click)="closePopup()">
+        <i class="close-icon"></i>
+      </div>
+    </header>
+    <div class="modal-body">
+      <ng-content></ng-content>
+    </div>
+    <div class="modal-footer">
+      <button (click)="closePopup()">Close</button>
+    </div>
+  </div>
+</div>
