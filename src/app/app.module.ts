@@ -51,7 +51,7 @@ library.add(faChalkboard, faCogs, faTable,
   faCaretUp, faCog, faTimes, faExclamationCircle);
 
 const routes: Routes = [
-  // {path: '', component: AppComponent},
+  {path: '', redirectTo: 'shop', pathMatch: 'full'},
   {path: 'tables', component: TablesComponent},
   {path: 'nesting-table.html', component: NestingTableComponent},
   {path: 'responsive-table.html', component: ResponsiveTableComponent},
