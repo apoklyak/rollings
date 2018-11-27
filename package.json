@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:prod": "ng build --prod && gzip-all \"dist/rollings/*.*\"",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -54,6 +55,7 @@
     "protractor": "5.4.1",
     "ts-node": "7.0.1",
     "tslint": "5.11.0",
-    "typescript": "3.1.6"
+    "typescript": "3.1.6",
+    "gzip-all": "1.0.0"
   }
 }
