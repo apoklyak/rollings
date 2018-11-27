@@ -65,6 +65,7 @@ const routes: Routes = [
     AllIconsComponent
   ],
   imports: [
+    RouterModule.forRoot(routes),
     BrowserModule,
     TablesModule,
     ShopModule,
@@ -74,8 +75,7 @@ const routes: Routes = [
     AccordionsModule,
     ProgressModule,
     NotificationsModule,
-    ChartModule,
-    RouterModule.forRoot(routes)
+    ChartModule
   ],
   providers: [NotificationsService],
   bootstrap: [AppComponent]

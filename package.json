@@ -5,10 +5,12 @@
     "ng": "ng",
     "start": "node server.js",
     "build": "ng build",
+    "build:prod": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "ng build --aot --prod"
+    "postinstall": "ng build --aot --prod",
+    "server:test": "node server"
   },
   "private": true,
   "dependencies": {
@@ -28,6 +30,7 @@
     "@fortawesome/free-solid-svg-icons": "5.5.0",
     "angular": "1.7.5",
     "chart.js": "2.7.3",
+    "compression": "1.7.3",
     "core-js": "2.5.7",
     "express": "4.16.4",
     "lodash": "4.17.11",

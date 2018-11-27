@@ -1,7 +1,9 @@
+var compression = require('compression');
 const express = require('express');
 const app = express();
 const path = require('path');
 
+app.use(compression());
 app.use(express.static(__dirname + '/dist/rollings'));
 
 app.get('/*', function(req,res) {
