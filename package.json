@@ -25,12 +25,13 @@
     "@fortawesome/free-solid-svg-icons": "5.5.0",
     "angular": "1.7.5",
     "chart.js": "2.7.3",
+    "compression": "1.7.3",
     "core-js": "2.5.7",
     "lodash": "4.17.11",
     "ngx-siema": "2.0.1",
     "rxjs": "6.3.3",
-    "swiper": "4.4.2",
     "rxjs-compat": "6.3.3",
+    "swiper": "4.4.2",
     "zone.js": "0.8.26"
   },
   "devDependencies": {
