@@ -8,7 +8,8 @@
     "build:prod": "ng build --prod && gzip-all \"dist/rollings/*.*\"",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "server:test": "node server"
   },
   "private": true,
   "dependencies": {
