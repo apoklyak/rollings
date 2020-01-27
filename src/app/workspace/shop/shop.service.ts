@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {products} from '../../enums/products';
-import {Subject} from 'rxjs/Subject';
-import {Observable} from 'rxjs/Observable';
+import {Subject} from 'rxjs';
+import {Observable} from 'rxjs';
 
 @Injectable()
 export class ShopService {
