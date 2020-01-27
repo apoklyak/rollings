@@ -16,7 +16,7 @@ export class MobileProductSliderComponent implements AfterViewInit {
   }
 
   swiperInit() {
-    const Swiper = require('swiper/dist/js/swiper.min.js');
+    const Swiper = require('swiper/js/swiper.min.js');
     this.swiper = new Swiper('.swiper-container', {
       loop: true,
       slidesPerView: 'auto',
