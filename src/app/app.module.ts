@@ -17,8 +17,7 @@ import {AllIconsComponent} from './workspace/all-icons/all-icons.component';
 // В случае же если вы хотите оставить определённый набор иконок,
 // то нужно сделать это, как показано ниже, но затем удалить компонент AllIconsComponent
 
-import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
-import {library} from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import {
   faChalkboard,
   faCogs,
@@ -44,11 +43,7 @@ import {ProgressModule} from './workspace/progress/progress.module';
 import {NotificationsModule} from './workspace/notifications/notifications.module';
 import {NotificationsService} from './workspace/notifications/notifications.service';
 
-library.add(faChalkboard, faCogs, faTable,
-  faChartPie, faShoppingCart, faAngleDown,
-  faAngleUp, faAngleLeft, faAngleRight,
-  faCaretDown, faCaretLeft, faCaretRight,
-  faCaretUp, faCog, faTimes, faExclamationCircle);
+
 
 const routes: Routes = [
   {path: '', redirectTo: 'shop', pathMatch: 'full'},
@@ -81,4 +76,23 @@ const routes: Routes = [
   bootstrap: [AppComponent]
 })
 export class AppModule {
+  constructor(library: FaIconLibrary) {
+    library.addIcons(faChalkboard);
+    library.addIcons(faCogs);
+    library.addIcons(faTable);
+    library.addIcons(faChartPie);
+    library.addIcons(faShoppingCart);
+    library.addIcons(faAngleDown);
+    library.addIcons(faAngleUp);
+    library.addIcons(faAngleLeft);
+    library.addIcons(faAngleRight);
+    library.addIcons(faCaretDown);
+    library.addIcons(faCaretLeft);
+    library.addIcons(faCaretRight);
+    library.addIcons(faCaretUp);
+    library.addIcons(faCog);
+    library.addIcons(faTimes);
+    library.addIcons(faExclamationCircle);
+      }
+  
 }
