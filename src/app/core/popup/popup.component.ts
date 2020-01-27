@@ -6,7 +6,8 @@ import {
   animate,
   transition,
 } from '@angular/animations';
-import {NotificationsService} from '../../workspace/notifications/notifications.service';
+import {PopupService} from './popup.service';
+
 
 @Component({
   selector: 'app-popup',
@@ -14,41 +15,33 @@ import {NotificationsService} from '../../workspace/notifications/notifications.
   styleUrls: ['./popup.style.scss'],
   animations: [
     trigger('popup', [
-      state('false',
-        style({opacity: 0, display: 'none'})
-      ),
-      state('true',
-        style({opacity: 1, display: 'flex'})
-      ),
-      transition('false => true', animate('.25s',
-        style({opacity: 1}),
-      )),
-      transition('true => false', animate('.25s',
-        style({opacity: 0}),
-      ))
+      transition(':enter', [
+        style({ opacity: 0 }),
+        animate('1s', style({ opacity: 1 })),
+      ]),
+      transition(':leave', [
+        animate('1s', style({ opacity: 0 }))
+      ])
     ])
   ]
 })
 
 export class PopupComponent {
   @Input() popupPosition: string;
+  
   public popupPositionBySubject = '';
-
-  constructor(private notificationsService: NotificationsService) {
-
+  constructor(private popupService: PopupService) {
   }
 
   closePopup() {
     return this.popupPositionBySubject = '';
   }
 
-
   popupShow() {
-    this.notificationsService.getPopupPosition().subscribe((position) => {
+    this.popupService.getPopupPosition().subscribe((position) => {
       this.popupPositionBySubject = position;
     });
 
     return this.popupPosition === this.popupPositionBySubject;
-  }
-
+  } 
 }

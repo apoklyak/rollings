@@ -1,13 +1,14 @@
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 import {Observable, Subject} from 'rxjs';
 
-export enum PopupTypes {
-  Top = 'top',
-  Center = 'center'
-}
+@Injectable({
+  providedIn: 'root'
+})
+export class PopupService {
 
-@Injectable()
-export class NotificationsService {
+  constructor(
+  ) { }
+  
   private showPopup = new Subject<any>();
 
   onShowPopup(state) {
