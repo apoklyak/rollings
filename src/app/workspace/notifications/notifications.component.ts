@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {NotificationsService, PopupTypes} from './notifications.service';
+import {PopupService} from '../../core/popup/popup.service'
 
 
 @Component({
@@ -8,13 +8,13 @@ import {NotificationsService, PopupTypes} from './notifications.service';
   styleUrls: ['./notifications.component.scss']
 })
 export class NotificationsComponent {
-  public popupTypes = PopupTypes;
 
-  constructor(private notificationsService: NotificationsService) {
+  constructor(
+    private popupService: PopupService) {
   }
 
-  openPopup(popupPosition) {
-    this.notificationsService.onShowPopup(popupPosition);
+  openPopup(id: string) {
+    this.popupService.onShowPopup(id);
   }
 
 }

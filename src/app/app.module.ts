@@ -41,7 +41,7 @@ import {ChartModule} from './workspace/chart/chart.module';
 import {AccordionsModule} from './workspace/accordions/accordions.module';
 import {ProgressModule} from './workspace/progress/progress.module';
 import {NotificationsModule} from './workspace/notifications/notifications.module';
-import {NotificationsService} from './workspace/notifications/notifications.service';
+import {PopupService} from './core/popup/popup.service';
 
 
 
@@ -72,7 +72,9 @@ const routes: Routes = [
     NotificationsModule,
     ChartModule
   ],
-  providers: [NotificationsService],
+  providers: [
+    PopupService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

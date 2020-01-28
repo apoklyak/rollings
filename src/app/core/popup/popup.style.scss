@@ -21,6 +21,9 @@
   &.top {
     align-items: flex-start;
   }
+  &.bottom{
+    align-items: flex-end;
+  }
 
   .modal {
     max-width: 500px;

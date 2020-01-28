@@ -1,4 +1,4 @@
-<div class="modal-wrapper" [ngClass]="popupPosition" [@popup]="popupShow()">
+<div class="modal-wrapper" [ngClass]="popupPosition"  @popup *ngIf="popupShow()">
   <div class="modal">
     <header>
       <p class="title">Modal Title</p>
