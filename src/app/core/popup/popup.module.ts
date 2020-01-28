@@ -3,6 +3,7 @@ import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {CommonModule} from '@angular/common';
 import {PopupComponent} from './popup.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {PopupService} from './popup.service';
 
 
 @NgModule({
@@ -16,9 +17,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
   ],
   exports: [
     PopupComponent
-  ]
+  ],
+  providers: [PopupService]
 })
 
 export class PopupModule {
-
 }

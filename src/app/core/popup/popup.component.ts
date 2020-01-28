@@ -1,7 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {
   trigger,
-  state,
   style,
   animate,
   transition,
@@ -16,11 +15,11 @@ import {PopupService} from './popup.service';
   animations: [
     trigger('popup', [
       transition(':enter', [
-        style({ opacity: 0 }),
-        animate('1s', style({ opacity: 1 })),
+        style({opacity: 0}),
+        animate('.25s', style({opacity: 1})),
       ]),
       transition(':leave', [
-        animate('1s', style({ opacity: 0 }))
+        animate('.25s', style({opacity: 0}))
       ])
     ])
   ]
@@ -28,8 +27,8 @@ import {PopupService} from './popup.service';
 
 export class PopupComponent {
   @Input() popupPosition: string;
-  
   public popupPositionBySubject = '';
+
   constructor(private popupService: PopupService) {
   }
 
@@ -43,5 +42,5 @@ export class PopupComponent {
     });
 
     return this.popupPosition === this.popupPositionBySubject;
-  } 
+  }
 }
