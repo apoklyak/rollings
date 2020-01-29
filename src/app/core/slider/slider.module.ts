@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { SliderComponent } from './slider.component';
 import { NgxSiemaModule } from 'ngx-siema';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
-import { SliderService } from './slider.service';
  
 
 
@@ -15,7 +14,6 @@ import { SliderService } from './slider.service';
     FontAwesomeModule,
   ],
   providers: [
-    SliderService
   ],
   exports: [
     SliderComponent

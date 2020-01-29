@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgxSiemaOptions, NgxSiemaService } from 'ngx-siema';
-import { SliderService } from './slider.service';
+import { Input } from '@angular/core';
+import { SliderItem } from '../types/slider.interface';
 
 @Component({
   selector: 'app-slider',
@@ -8,7 +9,9 @@ import { SliderService } from './slider.service';
   styleUrls: ['./slider.component.scss']
 })
 export class SliderComponent implements OnInit {
-  sliderItems: object = [];
+
+  @Input() items: SliderItem[];
+
   optionsSlider: NgxSiemaOptions = {
     selector: '.slider',
     duration: 500,
@@ -19,21 +22,18 @@ export class SliderComponent implements OnInit {
     threshold: 20,
     loop: true
   };
-  constructor(private ngxSiemaService: NgxSiemaService,
-    private service: SliderService
-    ) {
-  }
+
+  constructor(private ngxSiemaService: NgxSiemaService) {  }
 
 
   ngOnInit() {
-    this.sliderItems = this.service.items;
   }
   prev() {
-    this.ngxSiemaService.prev(1, '.slider')
+    this.ngxSiemaService.prev(1, '.slider');
   }
 
   next() {
-    this.ngxSiemaService.next(1, '.slider')
+    this.ngxSiemaService.next(1, '.slider');
   }
 
 }

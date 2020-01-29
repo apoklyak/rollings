@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgxSiemaOptions, NgxSiemaService } from 'ngx-siema';
-import { GalleryService } from './gallery.service';
+import { Input } from '@angular/core';
+import { SliderItem } from '../types/slider.interface';
 
 @Component({
   selector: 'app-gallery',
@@ -8,7 +9,9 @@ import { GalleryService } from './gallery.service';
   styleUrls: ['./gallery.component.scss']
 })
 export class GalleryComponent implements OnInit {
-  sliderItems: object = [];
+
+  @Input() items: SliderItem[];
+  
   options: NgxSiemaOptions = {
     selector: '.siema',
     duration: 200,
@@ -22,13 +25,9 @@ export class GalleryComponent implements OnInit {
     threshold: 20,
     loop: true
   };
-  constructor(private ngxSiemaService: NgxSiemaService,
-    private galleryService: GalleryService
-    ) {
-  }
+  constructor(private ngxSiemaService: NgxSiemaService) {  }
 
-  ngOnInit() {
-    this.sliderItems = this.galleryService.items;
+  ngOnInit() {    
   }
   galleryprev() {
     this.ngxSiemaService.prev(1, '.siema')
