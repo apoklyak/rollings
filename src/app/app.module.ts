@@ -44,13 +44,13 @@ import {NotificationsModule} from './workspace/notifications/notifications.modul
 import {PopupService} from './core/popup/popup.service';
 
 
-
 const routes: Routes = [
   {path: '', redirectTo: 'shop', pathMatch: 'full'},
   {path: 'tables', component: TablesComponent},
   {path: 'nesting-table.html', component: NestingTableComponent},
   {path: 'responsive-table.html', component: ResponsiveTableComponent},
-  {path: 'all-icons.html', component: AllIconsComponent}
+  {path: 'all-icons.html', component: AllIconsComponent},
+  { path: 'gallery', loadChildren: () => import('./workspace/galleries/galleries.module').then(m => m.GalleriesModule) }
 ];
 
 
@@ -60,7 +60,9 @@ const routes: Routes = [
     AllIconsComponent
   ],
   imports: [
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes, {
+      enableTracing: true
+    }),
     BrowserModule,
     TablesModule,
     ShopModule,
