@@ -1,6 +1,5 @@
 import {NgModule} from '@angular/core';
 import {ShopComponent} from './shop.component';
-import {BrowserModule} from '@angular/platform-browser';
 import {ProductComponent} from './product/product.component';
 import {RouterModule} from '@angular/router';
 import {ShopService} from './shop.service';
@@ -16,7 +15,6 @@ import {SharedModule} from '../../shared/shared.module';
 
 @NgModule({
   imports: [
-    BrowserModule,
     RouterModule,
     ShopRoutingModule,
     CommonModule,

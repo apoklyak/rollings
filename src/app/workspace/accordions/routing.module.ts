@@ -4,7 +4,7 @@ import {AccordionsComponent} from './accordions.component';
 
 const accordionsRoutes: Routes = [
   {
-    path: 'accordions.html',
+    path: '',
     component: AccordionsComponent
   }
 ];

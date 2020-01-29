@@ -4,7 +4,7 @@ import {ProgressComponent} from './progress.component';
 
 const progressRoutes: Routes = [
   {
-    path: 'progress.html',
+    path: '',
     component: ProgressComponent
   }
 ];

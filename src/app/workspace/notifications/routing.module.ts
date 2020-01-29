@@ -4,7 +4,7 @@ import {NotificationsComponent} from './notifications.component';
 
 const notificationsRoutes: Routes = [
   {
-    path: 'notifications.html',
+    path: '',
     component: NotificationsComponent
   }
 ];
