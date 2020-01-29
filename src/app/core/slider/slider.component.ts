@@ -11,29 +11,18 @@ import { SliderItem } from '../types/slider.interface';
 export class SliderComponent implements OnInit {
 
   @Input() items: SliderItem[];
-
-  optionsSlider: NgxSiemaOptions = {
-    selector: '.slider',
-    duration: 500,
-    easing: 'ease-out',
-    perPage:1,
-    startIndex: 0,
-    draggable: true,
-    threshold: 20,
-    loop: true
-  };
+  @Input() options: NgxSiemaOptions;
 
   constructor(private ngxSiemaService: NgxSiemaService) {  }
-
 
   ngOnInit() {
   }
   prev() {
-    this.ngxSiemaService.prev(1, '.slider');
+    this.ngxSiemaService.prev(1, this.options.selector);
   }
 
   next() {
-    this.ngxSiemaService.next(1, '.slider');
+    this.ngxSiemaService.next(1, this.options.selector);
   }
 
 }

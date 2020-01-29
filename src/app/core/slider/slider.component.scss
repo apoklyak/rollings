@@ -4,11 +4,10 @@
 @import "../../../styles/variables";
 @import "../../../styles/btns";
 
+
 .slider-box {
   position: relative;
-  .siema {
-    margin: 5% auto;
-  }
+ margin: 1vw 0 0;
   &-title {
     color: $gallery-title;
     width: 100%;
