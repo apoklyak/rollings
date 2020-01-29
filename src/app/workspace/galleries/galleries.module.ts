@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {GalleriesComponent } from './galleries.component';
 import { GalleriesRoutingModule } from './routing.module';
-import { GalleryModule } from '../gallery/gallery.module';
-import { SliderModule } from '../slider/slider.module';
+import { GalleryModule } from '../../core/gallery/gallery.module';
+import { SliderModule } from '../../core/slider/slider.module';
 
 
 @NgModule({
