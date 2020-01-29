@@ -128,6 +128,14 @@
             <span>Notifications</span>
           </a>
         </li>
+        <li>
+          <a href="javascript:void(0)" routerLink="gallery">
+            <fa-icon
+              [icon]="'exclamation-circle'">
+            </fa-icon>
+            <span>Gallery</span>
+          </a>
+        </li>
       </ul>
     </div>
     <div class="theme-settings">
@@ -137,5 +145,6 @@
   </nav>
   <article id="scroll" [class.active]="active" [class.hide]="hide">
     <router-outlet></router-outlet>
+   
   </article>
 </div>
