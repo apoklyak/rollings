@@ -1,0 +1,18 @@
+<div class="slider-box">
+  <ngx-siema [options]="optionsSlider">
+    <ngx-siema-slide *ngFor="let n of sliderItems">
+      <div class="item">
+        <img [src]="n.path" />
+      </div>
+    </ngx-siema-slide>
+  </ngx-siema>
+  <div class="left" (click)="prev()">
+    <fa-icon [icon]="'angle-left'">
+    </fa-icon>
+  </div>
+  <div class="right" (click)="next()">
+    <fa-icon [icon]="'angle-right'">
+    </fa-icon>
+  </div>
+</div>
+ 
