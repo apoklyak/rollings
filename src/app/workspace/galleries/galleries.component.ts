@@ -9,9 +9,8 @@ import { SliderItem, SliderOptions } from '../../core/types/slider.interface';
   styleUrls: ['./galleries.component.scss']
 })
 export class GalleriesComponent  {
-  sliderItems: SliderItem[] = slider.items;
-  sliderOptions: SliderOptions = slider.options;
-  galleryItems: SliderItem[] = gallery.items;  
-  galleryOptions: SliderOptions = gallery.options;
-  constructor() { }
+  public sliderItems: SliderItem[] = slider.items;
+  public sliderOptions: SliderOptions = slider.options;
+  public galleryItems: SliderItem[] = gallery.items;
+  public galleryOptions: SliderOptions = gallery.options;
 }

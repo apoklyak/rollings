@@ -9,11 +9,10 @@ import { SliderItem } from '../types/slider.interface';
   styleUrls: ['./slider.component.scss']
 })
 export class SliderComponent {
-
   @Input() items: SliderItem[];
   @Input() options: NgxSiemaOptions;
 
-  constructor(private ngxSiemaService: NgxSiemaService) {  }
+  constructor(private ngxSiemaService: NgxSiemaService) {}
 
   onPrev() {
     this.ngxSiemaService.prev(1, this.options.selector);
@@ -22,5 +21,4 @@ export class SliderComponent {
   onNext() {
     this.ngxSiemaService.next(1, this.options.selector);
   }
-
 }
