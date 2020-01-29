@@ -4,7 +4,7 @@ import {AlertsComponent} from './alerts.component';
 
 const alertsRoutes: Routes = [
   {
-    path: 'alerts.html',
+    path: '',
     component: AlertsComponent
   }
 ];

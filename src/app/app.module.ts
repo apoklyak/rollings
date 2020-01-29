@@ -7,7 +7,6 @@ import {NestingTableComponent} from './workspace/tables/nesting/nesting.componen
 import {TablesComponent} from './workspace/tables/tables.component';
 import {TablesModule} from './workspace/tables/tables.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {ShopModule} from './workspace/shop/shop.module';
 import {AllIconsComponent} from './workspace/all-icons/all-icons.component';
 
 // Вместо того, чтобы подключить всю библиотеку с иконками, снизу идёт подключение определённых иконок.
@@ -36,12 +35,8 @@ import {
   faTimes,
   faExclamationCircle
 } from '@fortawesome/free-solid-svg-icons';
-import {AlertsModule} from './workspace/alerts/alerts.module';
-import {ChartModule} from './workspace/chart/chart.module';
-import {AccordionsModule} from './workspace/accordions/accordions.module';
-import {ProgressModule} from './workspace/progress/progress.module';
-import {NotificationsModule} from './workspace/notifications/notifications.module';
 import {PopupService} from './core/popup/popup.service';
+import {ShopService} from './workspace/shop/shop.service';
 
 
 const routes: Routes = [
@@ -50,7 +45,13 @@ const routes: Routes = [
   {path: 'nesting-table.html', component: NestingTableComponent},
   {path: 'responsive-table.html', component: ResponsiveTableComponent},
   {path: 'all-icons.html', component: AllIconsComponent},
-  { path: 'gallery', loadChildren: () => import('./workspace/galleries/galleries.module').then(m => m.GalleriesModule) }
+  {path: 'gallery', loadChildren: () => import('./workspace/galleries/galleries.module').then(m => m.GalleriesModule) },
+  {path: 'notifications.html', loadChildren: () => import('./workspace/notifications/notifications.module').then(m => m.NotificationsModule) },
+  {path: 'progress.html', loadChildren: () => import('./workspace/progress/progress.module').then(m => m.ProgressModule) },
+  {path: 'accordions.html', loadChildren: () => import('./workspace/accordions/accordions.module').then(m => m.AccordionsModule) },
+  {path: 'alerts.html', loadChildren: () => import('./workspace/alerts/alerts.module').then(m => m.AlertsModule) },
+  {path: 'shop', loadChildren: () => import('./workspace/shop/shop.module').then(m => m.ShopModule) },
+  {path: 'charts.html', loadChildren: () => import('./workspace/chart/chart.module').then(m => m.ChartModule) },
 ];
 
 
@@ -60,22 +61,15 @@ const routes: Routes = [
     AllIconsComponent
   ],
   imports: [
-    RouterModule.forRoot(routes, {
-      enableTracing: true
-    }),
+    RouterModule.forRoot(routes),
     BrowserModule,
     TablesModule,
-    ShopModule,
     FontAwesomeModule,
-    BrowserAnimationsModule,
-    AlertsModule,
-    AccordionsModule,
-    ProgressModule,
-    NotificationsModule,
-    ChartModule
+    BrowserAnimationsModule
   ],
   providers: [
-    PopupService
+    PopupService,
+  ShopService
   ],
   bootstrap: [AppComponent]
 })

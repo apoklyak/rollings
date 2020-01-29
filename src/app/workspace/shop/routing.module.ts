@@ -6,14 +6,14 @@ import {ShopComponent} from './shop.component';
 
 const shopRoutes: Routes = [
   {
-    path: 'shop',
+    path: '',
     component: ShopComponent,
     data: {
       cart: true
     }
   },
   {
-    path: 'shop/:name',
+    path: ':name',
     component: ProductDetailComponent,
     resolve: {
       item: ItemResolver

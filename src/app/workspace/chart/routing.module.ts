@@ -4,7 +4,7 @@ import {ChartsComponent} from './chart.component';
 
 const alertsRoutes: Routes = [
   {
-    path: 'charts.html',
+    path: '',
     component: ChartsComponent
   }
 ];
