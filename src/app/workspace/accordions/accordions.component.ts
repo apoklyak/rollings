@@ -9,14 +9,12 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
     trigger('openAccordion', [
       state('false',
         style({
-          height: '0',
-          display: 'none'
+          height: '0'
         }),
       ),
       state('true',
         style({
-          height: '*',
-          display: 'block'
+          height: '*'
         })
       ),
       transition('true <=> false', animate('.25s'))
