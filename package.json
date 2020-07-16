@@ -28,7 +28,7 @@
     "chart.js": "2.9.3",
     "compression": "1.7.4",
     "core-js": "3.6.4",
-    "lodash": "4.17.15",
+    "lodash": "4.17.19",
     "ngx-siema": "2.0.1",
     "rxjs": "6.5.4",
     "rxjs-compat": "^6.5.4",
